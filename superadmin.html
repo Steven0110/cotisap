@@ -1,0 +1,511 @@
+<html><head><meta name="csrf-token" content="x8hCwrJwEbaXGWBTDp1rD6CYrPoX0Qy2t9XEIksr">
+	<meta charset="utf-8">
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Simple Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="layout" content="main">
+
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script src="http://localhost:8000/assets/js-plugins/jquery-3.1.1.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="http://localhost:8000/assets/css/customize-template.css">
+<link rel="stylesheet" type="text/css" href="http://localhost:8000/assets/css/preloader.css"><link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"><link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"><link rel="stylesheet" type="text/css" href="http://localhost:8000/assets/css/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"><link rel="stylesheet" href="http://localhost:8000/assets/css/sweetalert.css"><style type="text/css">
+		body > #body-container{
+	      background-image: url("http://localhost:8000/assets/img/black-bg03.jpg") !important;
+	      background-size: cover;
+	    }
+	    .body-nav.body-nav-horizontal{
+	      border-bottom: none;
+	    }
+		input:not([type]):focus:not([readonly]), input[type=text]:not(.browser-default):focus:not([readonly]), input[type=password]:not(.browser-default):focus:not([readonly]), input[type=email]:not(.browser-default):focus:not([readonly]), input[type=url]:not(.browser-default):focus:not([readonly]), input[type=time]:not(.browser-default):focus:not([readonly]), input[type=date]:not(.browser-default):focus:not([readonly]), input[type=datetime]:not(.browser-default):focus:not([readonly]), input[type=datetime-local]:not(.browser-default):focus:not([readonly]), input[type=tel]:not(.browser-default):focus:not([readonly]), input[type=number]:not(.browser-default):focus:not([readonly]), input[type=search]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]){
+			border-bottom: 1px solid #1f3a4d;
+		}
+		button.confirm{
+			background-color: #1f3a4d !important;
+		}
+		.sweet-alert{
+			-webkit-box-shadow: -3px 14px 51px 5px rgba(31,58,77,1);
+			-moz-box-shadow: -3px 14px 51px 5px rgba(31,58,77,1);
+			box-shadow: -3px 14px 51px 5px rgba(31,58,77,1);
+		}
+		.waves-effect.waves-light.btn{
+			background-position: 0 -35px !important;
+			background-color: #1f3a4d !important;
+		}
+		.waves-effect.waves-light.btn:hover{
+			color: white;
+		}
+		select{
+			display:inline-block !important;
+			height: 2rem !important;
+		}
+		.box .box-header{
+			height:50px !important;
+		}
+		.body-nav.body-nav-horizontal.body-nav-fixed{
+			height: 90px !important;
+		}
+		.body-nav.body-nav-horizontal ul li{
+			height: 90px !important;
+		}
+		.body-nav.body-nav-horizontal ul li a, .body-nav.body-nav-horizontal ul li button {
+		  height: 90px !important;
+		}
+		.page.container{
+			padding-top: 40px !important;
+		}
+		.page.container{
+			background-color: rgba(250, 250, 250, 0.5) !important;
+			margin-top: 40px !important;
+			padding-top: 0 !important;
+			padding-left: 20px !important;
+			padding-right: 20px !important;
+		}
+		.box-content{
+			background-color: rgba(250, 250, 250, 0.5) !important;
+		}
+		.edit, .delete{
+			cursor: pointer;
+		}
+		.changer{
+			cursor: pointer;
+		}
+		.animated-modal {
+		  max-width: 800px;
+		  border-radius: 4px;
+		  overflow: hidden;
+		  
+		  transform: translateY(-50px);
+		  transition: all .7s;
+		}
+
+		.animated-modal h2,
+		.animated-modal p {
+		  transform: translateY(-50px);
+		  opacity: 0;
+		  
+		  transition-property: transform, opacity;
+		  transition-duration: .4s;
+		}
+
+		/* Final state */
+		.fancybox-slide--current .animated-modal,
+		.fancybox-slide--current .animated-modal h2,
+		.fancybox-slide--current .animated-modal p {
+		  transform: translateY(0);
+		  opacity: 1;
+		}
+
+		/* Reveal content with different delays */
+		.fancybox-slide--current .animated-modal h2 {
+		  transition-delay: .1s;
+		}
+
+		.fancybox-slide--current .animated-modal p {
+		  transition-delay: .3s;
+		}
+		.input-field.suffix i {
+		  position: absolute;
+		  width: 3rem;
+		  font-size: 2rem;
+		  transition: color .2s;
+		  top: 0px;
+		  right: 0px;
+		}
+
+		.input-field.suffix i.active {
+		  color: #26a69a;
+		}
+
+		.input-field.suffix input,
+		.input-field.suffix textarea {
+		  margin-right: 3rem;
+		  width: 92%;
+		  width: calc(100% - 3rem);
+		}
+
+		.input-field.suffix textarea {
+		  padding-top: .8rem;
+		}
+
+		.input-field.suffix label {
+		  margin-right: 3rem;
+		}
+
+		@media  only screen and (max-width: 992px) {
+		  .input-field.suffix input {
+		    width: 86%;
+		    width: calc(100% - 3rem);
+		  }
+		}
+
+		@media  only screen and (max-width: 600px) {
+		  .input-field.suffix input {
+		    width: 80%;
+		    width: calc(100% - 3rem);
+		  }
+		}
+	</style><script src="chrome-extension://hmdmhilocobgohohpdpolmibjklfgkbi/pageScript.js"></script></head>	  	
+  	
+
+	<!--     Fonts and icons     -->
+	
+	
+	
+  	 
+ 	
+	
+	
+<body style="" class=" loaded"><div><div style="z-index:100000" id="owlreporter-preloader"><div id="loader"></div><div class="loader-section section-left"></div><div class="loader-section section-right"></div></div></div>
+
+	    
+    <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button class="btn btn-navbar" data-toggle="collapse" data-target="#app-nav-top-bar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="../" class="brand"><i class="icon-dashboard"> Administración general</i></a>
+                    <div id="app-nav-top-bar" class="nav-collapse">
+                        <ul class="nav pull-right">
+                            <li>
+                                <a href="http://localhost:8000/logout"><i class="icon-signout"></i>Logout</a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="body-container">
+            <div id="body-content">
+                
+                    <div class="body-nav body-nav-horizontal body-nav-fixed">
+                        <div class="container">
+                            <ul>
+                                <li>
+                                    <a href="http://localhost:8000/superadmin/agregar">
+                                        <i class="icon-plus icon-large"></i> Agregar Empresa
+                                    </a>
+                                </li>
+                                <!--
+                                <li>
+                                    <a href="http://localhost:8000/superadmin/eliminar"  >
+                                        <i class="icon-remove icon-large"></i> Eliminar empresa
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://localhost:8000/superadmin/actualizar"  >
+                                        <i class="icon-pencil icon-large"></i>Actualizar empresa
+                                    </a>
+                                </li>-->
+                                <li>
+                                    <a href="http://localhost:8000/superadmin/ver" class="active">
+                                        <i class="icon-eye-open icon-large"></i> Ver empresas
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                
+            </div>
+            <section class="page container">
+      
+      <div class="col s12">
+                <div class="box">
+                    <div class="box-header">
+                        <i class="icon-bookmark"></i>
+                        <h5>Empresas registradas</h5>
+                    </div>
+                    <div class="box-hide-me box-content text-center">
+                        <table id="companies-table" class="hover"></table>
+                        <div class="row" style="text-align: center !important;">
+                            <img src="http://localhost:8000/assets/img/loading3.gif" id="table-loader">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div id="update-modal" style="display: none;width: 70%;" class="animated-modal">
+                <div id="loading-container" class="animated-modal center">
+                    <img src="http://localhost:8000/assets/img/loading3.gif" id="update-loader">
+                </div>
+                <div id="container" style="display: none;">
+                    
+                    <h5>Datos generales</h5>
+                    <div class="row">
+                        <input style="display: none;" value="1" id="id" type="text">
+                        <div class="col s6">
+                            <div class="input-field col s12">
+                                <input value="MBR Hosting" id="name" type="text">
+                                <label for="name" class="active">Nombre</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input value="mbrhosting" disabled="disabled" id="prefix" type="text">
+                                <label for="prefix" class="active">Prefijo de tablas <small>(no editable)</small> </label>
+                            </div>
+                            <div class="input-field col s12">
+                                <input value="mbrhosting.com" id="domain" type="text">
+                                <label for="domain" class="active">Dominio</label>
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field col s12 center">
+                                <img id="image" style="border-radius:10%;border: 2px solid #1f3a4d;padding:10px;" src="" width="150" height="150">
+                            </div>
+                            <div class="input-field col s12">
+                                <input value="mbrhosting.com/img.jpg" id="url" type="text">
+                                <label for="url" class="active">URL de logo</label>
+                            </div>
+                        </div>
+                    </div>
+                    <h5>Accesos a SAP</h5>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field col s12">
+                                <input value="sap.com" id="sap_host" type="text">
+                                <label for="sap_host" class="active">Host</label>                            
+                            </div>
+                            <div class="input-field col s12">
+                                <input value="sap.com" id="sap_dbname" type="text">
+                                <label for="sap_dbname" class="active">Base de datos</label>  
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field col s12">
+                                <input value="sapbo" id="sap_user" type="text">
+                                <label for="sap_user" class="active">Usuario</label>                            
+                            </div>
+                            <div class="input-field suffix col s12">
+                                <input value="root" id="sap_psw" type="password">
+                                <label for="sap_psw" class="active">Contraseña</label>
+                                <i class="material-icons changer">lock</i>                            
+                            </div>
+                        </div>
+                    </div>
+                    <h5>Accesos a MySQL</h5>
+                    <div class="row">
+                        <div class="col s6">
+                            <div class="input-field col s12">
+                                <input value="mysql.com" id="mysql_host" type="text">
+                                <label for="mysql_host" class="active">Host</label>                            
+                            </div>
+                            <div class="input-field col s12">
+                                <input value="mysql.com" id="mysql_dbname" type="text">
+                                <label for="mysql_dbname" class="active">Base de datos</label>  
+                            </div>
+                        </div>
+                        <div class="col s6">
+                            <div class="input-field col s12">
+                                <input value="mysqlbo" id="mysql_user" type="text">
+                                <label for="mysql_user" class="active">Usuario</label>                            
+                            </div>
+                            <div class="input-field suffix col s12">
+                                <input value="root" id="mysql_psw" type="password">
+                                <label for="mysql_psw" class="active">Contraseña</label>
+                                <i class="material-icons changer">lock</i>                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s4">
+                            <a class="waves-effect waves-light btn" id="return" data-fancybox-close=""><i class="material-icons right">keyboard_return</i>Regresar</a>
+                        </div>
+                        <div class="col s4 offset-s4">
+                            <a class="waves-effect waves-light btn" id="update-btn"><i class="material-icons right">backup</i>Actualizar</a>
+                        </div>
+                    </div>
+                    <div class="row" id="loading-update" style="display: none;">
+                        <div class="progress">
+                            <div class="indeterminate"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              
+  	</section>
+
+
+			<script type="text/javascript" src="http://localhost:8000/assets/js-plugins/preloader.js"></script>
+	
+	<!--   Core JS Files   -->
+    <script src="http://localhost:8000/assets/js-plugins/jquery-2.2.4.min.js" type="text/javascript"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script src="http://localhost:8000/assets/js-plugins/bootstrap.min.js" type="text/javascript"></script>
+	<script src="http://localhost:8000/assets/js-plugins/jquery.bootstrap.js" type="text/javascript"></script>
+	<script src="http://localhost:8000/assets/js-plugins/jquery.fancybox.min.js" type="text/javascript"></script>
+  	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script>
+
+    <script src="http://localhost:8000/assets/js/ajaxSetup.js" type="text/javascript"></script>
+  	<script src="http://localhost:8000/assets/js-plugins/sweetalert.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		var companies_data;
+		var lang_ES = {"sProcessing":"Procesando...","sLengthMenu":"Mostrar _MENU_ registros","sZeroRecords":"No se encontraron resultados","sEmptyTable":"Ningún dato disponible en esta tabla","sInfo":"Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros","sInfoEmpty":"Mostrando registros del 0 al 0 de un total de 0 registros","sInfoFiltered":"(filtrado de un total de _MAX_ registros)","sInfoPostFix":"","sSearch":"Buscar:","sUrl":"","sInfoThousands":",","sLoadingRecords":"Cargando...","oPaginate":{"sFirst":"Primero","sLast":"Último","sNext":"Siguiente","sPrevious":"Anterior"},"oAria":{"sSortAscending":": Activar para ordenar la columna de manera ascendente","sSortDescending":": Activar para ordenar la columna de manera descendente"}};
+		$(document).ready(function(){
+			getCompanies();
+			$('.datables-container').on('click', '.select-dropdown li', e => e.preventDefault());
+			$(".changer").on("click", togglePassword );
+			$("#update-btn").on("click", updateCompany );
+		});
+		function getCompanies(){
+			$.ajax({
+				method : "GET",
+				url : "http://localhost:8000/superadmin/companies/all",
+				success : function( response ){
+					var TABLE = $("#companies-table").DataTable({
+						"columnDefs": [
+				        	{"className": "dt-center", "targets": "_all"},
+				        	{"targets": 4, "orderable": false},
+				        	{"targets": 5, "orderable": false},
+				        	{"render" : function(data, type, row){
+				        		return "<span id='name-" + row[0] +"'>" + data + "</span>";
+				        	}, "targets" : 1 },
+				        	{"render" : function(data, type, row){
+				        		return "<span id='domain-" + row[0] +"'>" + data + "</span>";
+				        	}, "targets" : 3 },
+				        	{"render" : function(data, type, row){
+				        		return "<img data-fancybox data-src='#update-modal' href='javascript:;' data='" + data + "' class='edit' src='http://localhost:8000/assets/img/edit.png' height='30' width='30'/>";
+				        	}, "targets" : 4 },
+				        	{"render" : function(data, type, row){
+				        		return "<img data='" + data + "' class='delete' src='http://localhost:8000/assets/img/delete.png' height='30' width='30'/>";
+				        	}, "targets" :5 }
+				      	],
+						language : lang_ES,
+						columns : [
+		            		{ title: "ID" },
+		            		{ title: "Nombre" },
+		            		{ title: "Fecha de creación" },
+		            		{ title: "Dominio" },
+		            		{ title: "Editar" },
+		            		{ title: "Eliminar" }
+						]
+					});
+					companies_data = response.data;
+					response.data.forEach(function(e){
+						var array_aux = new Array();
+						array_aux.push(e.id);
+						array_aux.push(e.Nombre);
+						array_aux.push(e.created_at);
+						array_aux.push(e.dominio);
+						array_aux.push(e.id);
+						array_aux.push(e.id);
+						TABLE.row.add( array_aux );
+					});
+					TABLE.draw();
+					$("#table-loader").hide();
+					$(".edit").on("click", setCompanyInfo );
+					$(".delete").on("click", deleteCompany );
+				}
+			});
+		}
+		function togglePassword(e){
+			var icon = $(e.currentTarget);
+			if( icon.text() == "lock" ){
+				icon.siblings("input").attr("type", "text" );
+				icon.text("lock_open");
+			}else{
+				icon.siblings("input").attr("type", "password" );
+				icon.text("lock");
+			}
+		}
+		function setCompanyInfo(e){
+			var id = $(e.currentTarget).attr("data");
+			$.ajax({
+				method : "GET",
+				url : "http://localhost:8000/superadmin/companies/" + id,
+				success : function( response ){
+					var company = response.data;
+					$("#name").val( company.Nombre );
+					$("#prefix").val( company.Company );
+					$("#url").val( company.logo );
+					$("#image").attr("src", company.logo );
+					$("#domain").val( company.dominio );
+					$("#sap_host").val( company.HOST_Sap );
+					$("#sap_dbname").val( company.DB_Sap );
+					$("#sap_user").val( company.USER_Sap );
+					$("#sap_psw").val( company.PASS_Sap );
+					$("#mysql_host").val( company.HOST_cotiSap );
+					$("#mysql_dbname").val( company.DB_cotiSap );
+					$("#mysql_user").val( company.USER_cotiSap );
+					$("#mysql_psw").val( company.PASS_cotiSap );
+					$("#container").show();
+					$("#loading-container").hide();
+				}
+			});
+		}
+		function updateCompany(){
+			$("#loading-update").show();
+			var id_x = $("#id").val();
+			$.ajax({
+				method : "POST",
+				url : "http://localhost:8000/superadmin/companies/" + id_x,
+				data : {
+					"name" : $("#name").val(),
+					"url" : $("#url").val(),
+					"domain" : $("#domain").val(),
+					"sap_host" : $("#sap_host").val(),
+					"sap_dbname" : $("#sap_dbname").val(),
+					"sap_user" :  $("#sap_user").val(),
+					"sap_psw" : $("#sap_psw").val(),
+					"mysql_host" : $("#mysql_host").val(),
+					"mysql_dbname" : $("#mysql_dbname").val(),
+					"mysql_user" :  $("#mysql_user").val(),
+					"mysql_psw" : $("#mysql_psw").val(),
+					"_method" : "PUT"
+				},
+				success : function( response ){
+					$("#loading-update").hide();
+					if( response.status ){
+						swal({
+							title : "OK",
+							text : "Empresa actualizada correctamente",
+							type : "success"
+						}, function(){
+							$("#name-" + id_x ).text($("#name").val());
+							$("#domain-" + id_x ).text($("#domain").val());
+							$("#return").click();
+						});
+					}else{
+						swal({
+							title : "Error",
+							text : "Ocurrió unn error desconocido",
+							type : "error"
+						});
+					}
+					console.log( response );
+				}
+			});
+		}
+		function deleteCompany(e){
+			var id = $(e.currentTarget).attr("data");
+			swal({
+		        title: "¿Seguro que deseas eliminar a " + $("#name-" + id).text() + "?",
+		        text: "No podrás recuperar la información después de esto",
+		        type: "warning",
+		        showCancelButton: true,
+		        confirmButtonColor: '#1f3a4d',
+		        confirmButtonText: 'Estoy seguro',
+		        cancelButtonText: "Cancelar",
+		        closeOnConfirm: false,
+		        closeOnCancel: true
+		    },
+		    function(isConfirm) {
+		        if (isConfirm) {
+		            swal({
+		                title: 'Borrado!',
+		                text: 'En realidad no está borrada. Sólo es para testear',
+		                type: 'success'
+		            });
+		        }else{
+		            
+		        }
+		    });
+		} 
+	</script>
+
+</body></html>
