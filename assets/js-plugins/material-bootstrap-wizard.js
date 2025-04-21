@@ -337,31 +337,24 @@ function testSAPConnection(){
     $("#no-connection-message").slideUp("slow");
     $("#testSAP").removeClass("btn-success").removeClass("btn-theme").addClass("btn-theme");
 
-    $.ajax({
-        method : "GET",
-        url : test_sap_route,
-        data : {
-            "host" : $("#host").val(),
-            "user" : $("#user").val(),
-            "psw" : $("#psw").val(),
-            "dbname" : $("#dbname").val()
-        },
-        success : function( response ){
-            $("#test-loader").slideUp();
-            $("#testSAP").val("Probar conexión");
-            $("#testSAP").removeAttr("disabled");
-            if( response.status ){
-                $("#testSAP").val("Conexión exitosa!");
-                $("#nextBtn").removeAttr("disabled");
-                $("#no-connection-message").slideUp("slow");
-                $("#testSAP").addClass("btn-success").removeClass("btn-theme");
-            }
-            else{
-                $("#nextBtn").attr("disabled", "disabled");
-                $("#no-connection-message").slideDown("slow");
-            }
+    setTimeout(function() {
+        $("#test-loader").slideUp();
+        $("#testSAP").val("Probar conexión");
+        $("#testSAP").removeAttr("disabled");
+        
+        // Simulate successful connection
+        var response = { status: true };
+        
+        if(response.status) {
+            $("#testSAP").val("Conexión exitosa!");
+            $("#nextBtn").removeAttr("disabled");
+            $("#no-connection-message").slideUp("slow");
+            $("#testSAP").addClass("btn-success").removeClass("btn-theme");
+        } else {
+            $("#nextBtn").attr("disabled", "disabled");
+            $("#no-connection-message").slideDown("slow");
         }
-    });
+    }, 2000);
 }
 function testMySQLConnection(){
     $("#nextBtn").attr("disabled", "disabled");
@@ -471,39 +464,30 @@ function randomString( n ){
 function createCompany(){
     $("#final_loader").slideDown();
     $("#create").slideUp();
-    $.ajax({
-        method : "POST",
-        url : create_route,
-        data : {
-            "company_name" : company_name,
-            "company_prefix" : company_prefix,
-            "company_domain" : company_domain,
-            "company_url_logo" : company_url_logo,
-            "sap_host" : sap_host,
-            "sap_user" : sap_user,
-            "sap_psw" : sap_psw,
-            "sap_dbname" : sap_dbname,
-            "mysql_host" : mysql_host,
-            "mysql_user" : mysql_user,
-            "mysql_psw" : mysql_psw,
-            "mysql_dbname" : mysql_dbname
-        },
-        success : function( response ){
-            console.log( response.request );
-            if( response.status ){
-                $("#final_loader").slideUp();
-                $("#create").slideDown();
-                swal({
-                    title : "OK",
-                    text : "Empresa creada correctamente",
-                    type : "success"
-                }, function(){
-                    location.href = "../";
-                });
-            }else{
-
-            }
+    
+    setTimeout(function() {
+        // Simulate successful response
+        var response = {
+            status: true,
+            request: "Company creation simulated"
+        };
+        
+        console.log(response.request);
+        if(response.status) {
+            $("#final_loader").slideUp();
+            $("#create").slideDown();
+            swal({
+                title: "OK",
+                text: "Empresa creada correctamente",
+                type: "success"
+            }, function(){
+                location.href = "superadmin.html";
+            });
+        } else {
+            // Handle error case if needed
+            $("#final_loader").slideUp();
+            $("#create").slideDown();
         }
-    });
+    }, 2000);
 }
 /* End of custom functions */

@@ -180,7 +180,6 @@
                 </div>
             </div>
         </div>
-    
         <div id="body-container">
             <div id="body-content">
                 
@@ -188,18 +187,18 @@
                         <div class="container">
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="add_company.html">
                                         <i class="icon-plus icon-large"></i> Agregar Empresa
                                     </a>
                                 </li>
                                 <!--
                                 <li>
-                                    <a href="http://localhost:8000/superadmin/eliminar"  >
+                                    <a href="superadmin/eliminar"  >
                                         <i class="icon-remove icon-large"></i> Eliminar empresa
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="http://localhost:8000/superadmin/actualizar"  >
+                                    <a href="superadmin/actualizar"  >
                                         <i class="icon-pencil icon-large"></i>Actualizar empresa
                                     </a>
                                 </li>-->
@@ -214,7 +213,12 @@
                 
             </div>
             <section class="page container">
-      
+	<div>
+		<div class="alert alert-info" style="margin: 20px; padding: 15px; border-radius: 4px; background-color: #d9edf7; border: 1px solid #bce8f1; color: #31708f;">
+			<i class="icon-info-sign"></i>
+			<strong>Demo Notice:</strong> This is a demonstration portfolio site. All functionality is simulated and no backend services are connected.
+		</div>
+	</div>
       <div class="col s12">
                 <div class="box">
                     <div class="box-header">
@@ -486,7 +490,7 @@
 		function getCompanies(){
 			$.ajax({
 				method : "GET",
-				url : "http://localhost:8000/superadmin/companies/all",
+				url : "superadmin/companies/all",
 				success : function( response ){
 					var TABLE = $("#companies-table").DataTable({
 						"columnDefs": [
@@ -500,10 +504,10 @@
 				        		return "<span id='domain-" + row[0] +"'>" + data + "</span>";
 				        	}, "targets" : 3 },
 				        	{"render" : function(data, type, row){
-				        		return "<img data-fancybox data-src='#update-modal' href='javascript:;' data='" + data + "' class='edit' src='http://localhost:8000/assets/img/edit.png' height='30' width='30'/>";
+				        		return "<img data-fancybox data-src='#update-modal' href='javascript:;' data='" + data + "' class='edit' src='assets/img/edit.png' height='30' width='30'/>";
 				        	}, "targets" : 4 },
 				        	{"render" : function(data, type, row){
-				        		return "<img data='" + data + "' class='delete' src='http://localhost:8000/assets/img/delete.png' height='30' width='30'/>";
+				        		return "<img data='" + data + "' class='delete' src='assets/img/delete.png' height='30' width='30'/>";
 				        	}, "targets" :5 }
 				      	],
 						language : lang_ES,

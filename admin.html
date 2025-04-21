@@ -484,11 +484,11 @@
 
     </script>	  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script>
   <script type="text/javascript">
-    var route = "http://localhost:8000/dashboard";
-    var getSLPInfo = "http://localhost:8000/dashboard/kpi/getSLPInfo";
-    var getGralInfo = "http://localhost:8000/dashboard/kpi/getGralInfo";
-    var getPartners = "http://localhost:8000/dashboard/kpi/getPartners";
-    var show_q = "http://localhost:8000/dashboard/cotizaciones/nueva-cotizacion/show/XXX";
+    var route = "dashboard";
+    var getSLPInfo = "dashboard/kpi/getSLPInfo";
+    var getGralInfo = "dashboard/kpi/getGralInfo";
+    var getPartners = "dashboard/kpi/getPartners";
+    var show_q = "dashboard/cotizaciones/nueva-cotizacion/show/XXX";
     var company = "";
   </script>
   <script type="text/javascript">
@@ -497,7 +497,7 @@
       
         $.ajax({
           method: 'get',
-          url: "http://localhost:8000/dashboard/api/sap/token",
+          url: "dashboard/api/sap/token",
           data:{},
           success: function(data){
             console.log(data);
@@ -513,7 +513,7 @@
       });
       $('#artCode').select2({
           ajax: {
-            url:  "http://localhost:8000/dashboard/cotizaciones/nueva-cotizacion/getArticuloAll",
+            url:  "dashboard/cotizaciones/nueva-cotizacion/getArticuloAll",
             dataType: 'json',
             delay: 250,
             data: function (params) {
@@ -538,7 +538,7 @@
         var data = e.params.data;
         $.ajax({
           method: 'GET',
-          url: "http://localhost:8000/dashboard/cotizaciones/nueva-cotizacion/getArticuloData",
+          url: "dashboard/cotizaciones/nueva-cotizacion/getArticuloData",
           data: { q: data.id },
           success: function (result) {
             $("#artName").val(result[0].ItemName);
@@ -552,7 +552,7 @@
         
         $.ajax({
           method: 'GET',
-          url: "http://localhost:8000/dashboard/cotizaciones/nueva-cotizacion/getStock",
+          url: "dashboard/cotizaciones/nueva-cotizacion/getStock",
           data: { q: data.id },
           success: function(result){
             
