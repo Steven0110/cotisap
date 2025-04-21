@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html><head><meta name="csrf-token" content="LIkwVgD5MSdXjjkziSgPjEJjhPcYst77dJfh2rrb">
+    
+	<title>  | COTISAP</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="assets/css/animate.min.css" rel="stylesheet">
+
+    <link href="assets/css/vendor-styles.css" rel="stylesheet">
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <link rel="stylesheet" href="assets/css/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css">
+    <link rel="stylesheet" href="assets/css/jquery.tree.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+
+<script src="chrome-extension://hmdmhilocobgohohpdpolmibjklfgkbi/pageScript.js"></script></head>
+<body style=""><div id="loading" class="loading" style="display: none;">Loading…</div>	  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+
+
+	
+    <div class="main-wrapper">
+      
+      
+
+      <div class="an-page-content">
+        <div class="an-sidebar-nav js-sidebar-toggle-with-click">
+
+          <div class="an-sidebar-widgets">
+            <div class="widget-signle">
+            <h5 class="counter-result">345</h5>
+              <p>FCH</p>
+            </div>
+            <div class="widget-signle">
+              <h5 class="counter-result">1,234</h5>
+              <p>HRV</p>
+            </div>
+            <div class="widget-signle">
+              <h5 class="counter-result">900</h5>
+              <p>HRE</p>
+            </div>
+          </div> <!-- end .AN-SIDEBAR-WIDGETS -->
+          <div class="an-sidebar-nav">
+  <ul class="an-main-nav">
+    <!-- Dashboard Menu Item -->
+    <li class="an-nav-item">
+      <a href="#">
+        <span class="nav-title">
+          Dashboard
+        </span>
+      </a>
+    </li>
+
+    <!-- Users Menu with Children -->
+    <li class="an-nav-item">
+      <a class="js-show-child-nav" href="#">
+        <span class="nav-title">
+          Users Management
+          <span class="an-arrow-nav"><i class="icon-arrow-down"></i></span>
+        </span>
+      </a>
+      <ul class="an-child-nav js-open-nav">
+        <li><a href="#">All Users</a></li>
+        <li><a href="#">Create User</a></li>
+        <li><a href="#">Permissions</a></li>
+      </ul>
+    </li>
+
+    <!-- Reports Menu with Children -->
+    <li class="an-nav-item">
+      <a class="js-show-child-nav" href="#">
+        <span class="nav-title">
+          Reports
+          <span class="an-arrow-nav"><i class="icon-arrow-down"></i></span>
+        </span>
+      </a>
+      <ul class="an-child-nav js-open-nav">
+        <li><a href="#">Sales Reports</a></li>
+        <li><a href="#">Analytics</a></li>
+        <li><a href="#">Export Data</a></li>
+      </ul>
+    </li>
+
+    <!-- Settings Menu Item -->
+    <li class="an-nav-item">
+      <a href="#">
+        <span class="nav-title">
+          Settings
+        </span>
+      </a>
+    </li>
+
+  </ul>
+</div>          
+        </div>
+
+        <div class="an-content-body home-body-content">
+          
+          <div class="an-body-topbar wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+            <div class="an-page-title">
+              <h2>Vista general</h2>
+              <p>Bienvenido, 
+
+
+                <a href="#"><i class="icon-marker"></i>Ubicación: <span id="location">México</span></a>
+              </p>
+            </div>
+          </div>
+          <div class="an-panel-main-info">
+            <div class="row">
+              <div class="col-md-3 col-sm-6">
+                <div class="an-panel-main-info-single color-cyan with-shadow wow fadeIn" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+                  <h2><span class="percentage">94.9%</span><span class="info-identifier">Cotizaciones cerradas</span></h2>
+                  <i class="icon-chart"></i>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="an-panel-main-info-single lime-green with-shadow wow fadeIn" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+                <h2><span class="percentage">120</span><span class="info-identifier">Total de cotizaciones</span></h2>
+                  <i class="ion-document-text"></i>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="an-panel-main-info-single pale-yellow with-shadow wow fadeIn" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+                <h2><span class="percentage">$123,456</span><span class="info-identifier">Última cotización</span></h2>
+                  <a href="#" id="last_quotation_link"><button style="position:absolute;top:10px;right: 10px;" class="an-btn btn-warning">Ver</button></a>
+                  <i class="ion-cash"></i>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="an-panel-main-info-single soft-pink with-shadow wow fadeIn" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+                  <h2><span id="days-left">10 días</span> <span class="info-identifier" id="days-left-text">Para cierre de mes</span></h2>
+                  <i class="ion-calendar"></i>
+                </div>
+              </div>
+
+            </div>
+          </div> 
+          <div class="row an-masonry-layout" style="position: relative; height: 2058.69px;">
+            <div class="col-md-6 grid-item" style="position: absolute; left: 0%; top: 0px;">
+              <div class="an-single-component">
+		<div id="slider-carousel" class="owl-carousel default-slider owl-theme" style="opacity: 1; display: block;">
+		<div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 5760px; left: 0px; display: block; transition: 800ms; transform: translate3d(-1152px, 0px, 0px);"><div class="owl-item" style="width: 576px;"><div class="item text-center"><img src="assets/img/alianza-logo2.png" style="width: 556px; height: 300px;"></div></div><div class="owl-item" style="width: 576px;"><div class="item text-center"><img src="assets/img/alianza-logo2.png" style="width: 556px; height: 300px;"></div></div><div class="owl-item" style="width: 576px;"><div class="item text-center"><img src="assets/img/alianza-logo2.png" style="width: 556px; height: 300px;"></div></div><div class="owl-item" style="width: 576px;"><div class="item text-center"><img src="assets/img/alianza-logo2.png" style="width: 556px; height: 300px;"></div></div><div class="owl-item" style="width: 576px;"><div class="item text-center"><img src="assets/img/alianza-logo2.png" style="width: 556px; height: 300px;"></div></div></div></div><div class="owl-controls clickable"><div class="owl-buttons"><div class="owl-prev"></div><div class="owl-next"></div></div></div></div>
+	</div>
+            </div>
+                   
+            <div class="col-md-6 grid-item" style="position: absolute; left: 0%; top: 330px;">
+              <div class="an-single-component with-shadow">
+
+                <div class="an-helper-block">
+                  <div class="an-component-header">
+                    <h6>Información general de cotizaciones</h6>
+                    <div class="component-header-right">
+                      <img src="assets/img/loading.gif" height="30" width="30" id="gq-loader" style="display: none;">
+                    </div>
+                  </div>
+
+                  <div class="an-component-body" id="general-quotations-container"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; inset: 0px;"></iframe>
+                    <canvas id="general-quotations-graph" width="1172" height="878" style="height: 439px; display: block; width: 586px;"></canvas>
+                  </div> 
+                </div>
+              </div>            </div>
+            <br>
+            <div class="col-md-6 grid-item" style="position: absolute; left: 0%; top: 873px;">
+              <!-- 
+  [
+    'Developer' => 'Gerardo Aramis Cabello Acosta',
+    'GitHub'    => 'https://github.com/Steven0110/'
+  ]
+-->
+              <div class="an-single-component with-shadow">
+
+                <div class="an-helper-block">
+                  <div class="an-component-header">
+                    <h6>Búsqueda rápida de productos</h6>
+                    <div class="component-header-right">
+                      <img style="display: none;" src="assets/img/loading.gif" height="30" width="30" id="quick-loader">
+                    </div>
+                  </div>
+
+                  <div class="an-component-body">
+                    <div class="row">
+                      <div class="col-md-4"><select id="artCode" class="an-form-control select2-hidden-accessible" tabindex="-1" aria-hidden="true"></select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 175.328px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-artCode-container"><span class="select2-selection__rendered" id="select2-artCode-container"><span class="select2-selection__placeholder">Código o nombre</span></span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></div>
+                      <div class="col-md-8"><input id="artName" type="text" class="an-form-control" placeholder="Nombre"></div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-3">
+                        <span>P. Lista:</span>
+                        <h4>$<span id="precioLista">0.00</span></h4>
+                      </div>
+                      <div class="col-md-3">
+                        <span>Descuento:</span>
+                        <select class="an-form-control info" id="descuento" value="0">
+                          <option value="0" selected="selected">0%</option>
+                          <option value="17">17%</option>
+                          <option value="18.5">18.5%</option>
+                          <option value="20">20%</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <h2 class="text-right">$<span id="precio">0.00</span><span style="font-size: 15px;">MXN</span></h2>
+                      </div>
+                    </div>
+                    <div class="row" style="padding-left: 15px;">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">                      
+                        <tbody>                        
+                          <tr>                          
+                            <td colspan="10" class="qSubSec" style="color:#3e631a">
+                              Existencia por almacén (Total <span id="total">0</span>)
+                            </td>                        
+                          </tr>                        
+                          <tr style="color:#3e631a" id="names">                                     
+                          </tr>                        
+                          <tr style="color:#3e631a" id="values">
+                          </tr>                      
+                        </tbody>                    
+                      </table>
+                    </div>
+                    <div class="row" style="padding-left: 15px;">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>                        
+                          <tr>                          
+                            <td colspan="10" class="qSubSec" style="color:#a50000">
+                              Pendiente por recibir en almacén
+                            </td>                        
+                          </tr>
+                          <tr style="color:#a50000">             
+                            <td>QUE</td>
+                            <td>DF</td>
+                            <td>LEO</td>
+                            <td>DFC</td>
+                            <td>SAN</td>
+                            <td>GUA</td>
+                            <td>MON</td>
+                            <td>CED</td>
+                            <td>CAN</td>
+                            <td>AGU</td>                        
+                          </tr>                       
+                        <tr style="color:#a50000">              
+                          <td>
+                            <div class="oO1001 oTot">
+                              <span>0</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="oO1002 oTot">
+                              <span>0</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="oO1003 oTot">
+                              <span>0</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="oO1005 oTot">
+                              <span>0</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="oO1006 oTot">
+                              <span>0</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="oO1007 oTot">
+                              <span>0</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="oO1008 oTot">
+                              <span>0</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="oO1009 oTot">
+                              <span>0</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="oO1011 oTot">
+                              <span>0</span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="oO1012 oTot">
+                              <span>0</span>
+                            </div>
+                          </td>                        
+                        </tr> 
+                        </tbody>                    
+                      </table>
+                    </div>
+                  </div>
+
+                </div>
+              </div>            </div>
+            <div class="col-md-4 grid-item" style="position: absolute; left: 59.5975%; top: 0px;">
+              <div class="an-single-component with-shadow">
+
+                <div class="an-helper-block">
+                  <div class="an-component-header">
+                    <h6>Estatus de cotizaciones</h6>
+                    <div class="component-header-right">
+                      <img src="assets/img/loading.gif" height="30" width="30" id="gqs-loader" style="display: none;">
+                    </div>
+                  </div>
+
+                  <div class="an-component-body" id="general-quotations-container"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; inset: 0px;"></iframe>
+                    <canvas id="general-quotations-status-graph" width="742" height="494" style="display: block; width: 371px; height: 247px;"></canvas>
+                  </div>
+                </div>
+              </div>            </div>
+            <div class="col-md-3 grid-item" style="position: absolute; left: 59.5975%; top: 351px;">
+              <div class="an-single-component with-shadow">
+
+                <div class="an-helper-block">
+                  <div class="an-component-header">
+                    <h6>Hitrate general</h6>
+                    <div class="component-header-right">
+                      <img src="assets/img/loading.gif" height="30" width="30" id="ghr-loader" style="display: none;">
+                    </div>
+                  </div>
+
+                  <div class="an-component-body"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; inset: 0px;"></iframe>
+                    <canvas id="general-hitrate-graph" width="526" height="526" style="display: block; width: 263px; height: 263px;"></canvas>
+                  </div>
+
+                </div>
+              </div>            </div>
+            
+            <div class="col-md-12 grid-item" style="position: absolute; left: 0%; top: 1153px;">
+              <div class="an-single-component with-shadow">
+
+                <div class="an-helper-block">
+                  <div class="an-component-header">
+                    <h6>Información por vendedor</h6>
+                    <div class="component-header-right">
+                      <span>Selecciona un vendedor: </span>
+                      <div class="an-default-select-wrapper salespersons-wrapper" style="margin:0px;margin-left:5px;">
+                        <select id="salesperson" class="an-form-control success salespersons selectized" tabindex="-1" style="display: none;"><option value="1" selected="selected">Vendedor 1</option></select><div class="selectize-control an-form-control success salespersons single"><div class="selectize-input items full has-options has-items"><div class="item" data-value="1">Vendedor 1</div><input type="text" autocomplete="off" tabindex="" id="salesperson-selectized" style="width: 4px;"></div><div class="selectize-dropdown single an-form-control success salespersons" style="display: none;"><div class="selectize-dropdown-content"></div></div></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="an-component-body" id="salespersons-container">
+                    <div class="row">
+                      <div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; inset: 0px;"></iframe>
+                        <canvas id="quotations-salesperson-graph" width="1202" height="900" style="display: block; width: 601px; height: 450px;"></canvas>
+                      </div>
+                      <div class="col-md-6"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; inset: 0px;"></iframe>
+                        <canvas id="products-salesperson-graph" width="1202" height="900" style="display: block; width: 601px; height: 450px;"></canvas>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <canvas id="quotations-status-salesperson-graph" width="100" height="100"></canvas>
+                      </div>
+                      <div class="col-md-4">
+                        <canvas id="hitrate-salesperson-graph" width="100" height="100"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>            </div>
+
+            <div class="col-md-12 grid-item" style="position: absolute; left: 0%; top: 1812px;">
+              <style type="text/css">
+                #statements-table td:nth-last-child(-n+2), #statements-table th:nth-last-child(-n+2){
+                  background: rgba(50,165,213,1);
+                  color: white;
+                }
+                #statements-table td:last-child, #statements-table th:last-child{
+                  background: rgba(118,196,51,1);
+                  color: white;
+                }
+              </style>
+              <div class="an-single-component with-shadow" style="padding: 20px;">
+                <div class="an-component-header">
+                  <h6>Estados de cuenta (45 días)</h6>
+                  <div class="component-header-right">
+                    <span>Selecciona un socio: </span>
+                    <div class="an-default-select-wrapper" id="partner-wrapper">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="an-component-body">
+                  <style type="text/css">
+                    #statements-table-loader{
+                    }
+                  </style>
+                  <img id="statements-table-loader" style="position:absolute;top:25px;z-index: 9999;display:none;" src="assets/img/loading3.gif">
+                  <div id="statements-table_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="statements-table_length"><label>Mostrar <select name="statements-table_length" aria-controls="statements-table" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> registros</label></div><div id="statements-table_filter" class="dataTables_filter"><label>Buscar:<input type="search" class="" placeholder="" aria-controls="statements-table"></label></div><table id="statements-table" class="display compact dataTable no-footer" role="grid" aria-describedby="statements-table_info">
+                  <thead><tr role="row"><th class="dt-center sorting_asc" tabindex="0" aria-controls="statements-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Doc.: Activar para ordenar la columna de manera descendente" style="width: 100.469px;">Doc.</th><th class="dt-center sorting" tabindex="0" aria-controls="statements-table" rowspan="1" colspan="1" aria-label="Contabilizado: Activar para ordenar la columna de manera ascendente" style="width: 243.469px;">Contabilizado</th><th class="dt-center sorting" tabindex="0" aria-controls="statements-table" rowspan="1" colspan="1" aria-label="Se vence: Activar para ordenar la columna de manera ascendente" style="width: 169.156px;">Se vence</th><th class="dt-center sorting" tabindex="0" aria-controls="statements-table" rowspan="1" colspan="1" aria-label="Total: Activar para ordenar la columna de manera ascendente" style="width: 106.305px;">Total</th><th class="dt-center sorting" tabindex="0" aria-controls="statements-table" rowspan="1" colspan="1" aria-label="Saldo: Activar para ordenar la columna de manera ascendente" style="width: 116.664px;">Saldo</th><th class="dt-center sorting" tabindex="0" aria-controls="statements-table" rowspan="1" colspan="1" aria-label="Abono futuro: Activar para ordenar la columna de manera ascendente" style="width: 238.406px;">Abono futuro</th><th class="dt-center sorting" tabindex="0" aria-controls="statements-table" rowspan="1" colspan="1" aria-label="0-45: Activar para ordenar la columna de manera ascendente" style="width: 100.531px;">0-45</th></tr></thead><tbody><tr class="odd"><td valign="top" colspan="7" class="dataTables_empty">Sin información en un rango de 45 días a la fecha</td></tr></tbody></table><div class="dataTables_info" id="statements-table_info" role="status" aria-live="polite">Mostrando registros del 0 al 0 de un total de 0 registros</div><div class="dataTables_paginate paging_simple_numbers" id="statements-table_paginate"><a class="paginate_button previous disabled" aria-controls="statements-table" data-dt-idx="0" tabindex="0" id="statements-table_previous">Anterior</a><span></span><a class="paginate_button next disabled" aria-controls="statements-table" data-dt-idx="1" tabindex="0" id="statements-table_next">Siguiente</a></div></div>
+                </div> 
+              </div>;
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </div> 
+
+
+	<script src="assets/js-plugins/jquery-3.1.1.min.js" type="text/javascript"></script> 
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/js-plugins/bootstrap.min.js" type="text/javascript"></script>
+    <script src="assets/js-plugins/jquery.cookie.js" type="text/javascript"></script>
+    <script src="assets/js-plugins/moment.min.js" type="text/javascript"></script>
+    <script src="assets/js-plugins/daterangepicker.js" type="text/javascript"></script>
+    <script src="assets/js-plugins/wow.min.js" type="text/javascript"></script>
+    <script src="assets/js-plugins/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+    <script src="assets/js-plugins/selectize.min.js" type="text/javascript"></script>
+    <script src="assets/js-plugins/owl.carousel.min.js " type="text/javascript"></script>
+    <script src="assets/js-plugins/masonry.pkgd.min.js " type="text/javascript"></script>
+    <script src="assets/js-plugins/Chart.min.js " type="text/javascript"></script>
+    <script src="assets/js-plugins/circle-progress.min.js " type="text/javascript"></script>
+    <script src="assets/js-plugins/toastr.min.js " type="text/javascript"></script>
+    <script src="assets/js-plugins/select2.min.js"></script>
+    <script src="assets/js-plugins/es.js" type="text/javascript"></script>
+    <script src="assets/js-plugins/jquery.mask.min.js" type="text/javascript"></script>
+    <script src="assets/js-plugins/jquery.tree.min.js" type="text/javascript"></script>
+
+    <!--  MAIN SCRIPTS START FROM HERE  above scripts from plugin   -->
+    <script src="assets/js/customize-chart.js" type="text/javascript"></script>
+    <script src="assets/js/scripts.js" type="text/javascript"></script>
+    <script src="assets/js/ajaxSetup.js" type="text/javascript"></script>
+
+    <script>
+
+        $("#loading").hide();
+
+
+        /*Custom Color changes*/
+        /**
+         *
+         *  0   =>  Main Dashboard Header
+         *  1   =>  Sidebar
+         *  2   =>  SIdebar KPI
+         *  3   =>  SIdebar Color (fuente)
+         *  4   =>  Header Background
+         *  5   =>  Searchbox Background
+         *  6   =>  Btn primary
+         *  7   =>  Btn Success
+         *  8   =>  Btn Info
+         *  9   =>  Btn Warning
+         *  10   =>  Btn Danger
+         *
+         *
+         **/
+        // $(".an-header").css("background-color", colors[0]['value']);
+        // $(".an-sidebar-nav").css("background-color", colors[1]['value']);
+        // $(".widget-signle").css("background-color", colors[2]['value']);
+        // $(".an-sidebar-nav *").css("color", colors[3]['value']);
+        // console.log(colors[3]['value']);
+        // $(".an-header").css("color", colors[4]['value']);
+        // $(".an-topbar-left-part .an-search-field .an-form-control").css("background-color", colors[5]['value']);
+        // $(".an-btn-primary").css("background-color", colors[6]['value']);
+        // $(".an-btn-success").css("background-color", colors[7]['value']);
+        // $(".an-btn-info").css("background-color", colors[8]['value']);
+        // $(".an-btn-warning").css("background-color", colors[9]['value']);
+        // $(".an-btn-danger").css("background-color", colors[10]['value']);
+
+        // /**************************** LOAD KPI FROM COOKIES *************************************/
+        // $(document).ready(function(){
+        //     if($.cookie("kpi") != undefined ){
+        //         $("#fch img").hide();
+        //         $("#fch").text( JSON.parse($.cookie("kpi")).sidebar.fch );
+        //     }
+        // });
+
+        
+
+    </script>	  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var route = "http://localhost:8000/dashboard";
+    var getSLPInfo = "http://localhost:8000/dashboard/kpi/getSLPInfo";
+    var getGralInfo = "http://localhost:8000/dashboard/kpi/getGralInfo";
+    var getPartners = "http://localhost:8000/dashboard/kpi/getPartners";
+    var show_q = "http://localhost:8000/dashboard/cotizaciones/nueva-cotizacion/show/XXX";
+    var company = "";
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+      
+        $.ajax({
+          method: 'get',
+          url: "http://localhost:8000/dashboard/api/sap/token",
+          data:{},
+          success: function(data){
+            console.log(data);
+          }
+        }); 
+
+      
+
+      $("#descuento").on("change", function(event){
+        var elem = $(event.currentTarget);
+        var d = Number(elem.val());
+        $("#precio").text( (Number($("#precioLista").text()) - Number($("#precioLista").text()) * (d/100.0)).toFixed(2) );
+      });
+      $('#artCode').select2({
+          ajax: {
+            url:  "http://localhost:8000/dashboard/cotizaciones/nueva-cotizacion/getArticuloAll",
+            dataType: 'json',
+            delay: 250,
+            data: function (params) {
+              return {
+                q: params.term
+             };
+            },
+            processResults: function (data) {
+              return {
+                results: data
+              };
+            },
+            cache: true
+          },
+          placeholder: 'Código o nombre',
+          minimumInputLength: 3,
+          language: 'es'
+      });
+
+      $('#artCode').on('select2:select', function (e) {
+        $("#quick-loader").show();
+        var data = e.params.data;
+        $.ajax({
+          method: 'GET',
+          url: "http://localhost:8000/dashboard/cotizaciones/nueva-cotizacion/getArticuloData",
+          data: { q: data.id },
+          success: function (result) {
+            $("#artName").val(result[0].ItemName);
+            $("#precioLista").text(Number(result[0].Price));
+            $("#precio").text(Number(result[0].Price));
+          },
+          error: function(result) {
+            console.log(result);
+          }
+        });
+        
+        $.ajax({
+          method: 'GET',
+          url: "http://localhost:8000/dashboard/cotizaciones/nueva-cotizacion/getStock",
+          data: { q: data.id },
+          success: function(result){
+            
+            var Names = '';
+            var values = '';
+            var totalValues = 0;
+
+            $.each(result, function(index, value){
+              Names +=  "<td>" + value.WhsName.substring(0,3) + "</td>";
+              values += "<td>" + Number(value.OnHand).toFixed(0) + "</td>"; 
+              totalValues += Number(Number(value.OnHand).toFixed(0));
+            });
+
+            $('#total').text(totalValues);
+            $('#names' ).html(Names);
+            $('#values' ).html(values);
+            $("#quick-loader").hide();
+          }, 
+          error: function(){
+          }
+        });
+
+      });
+    });
+  </script>
+  <script src="assets/js/dashboard.js" type="text/javascript"></script>
+</body></html>

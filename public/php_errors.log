@@ -1,0 +1,21 @@
+[01-Aug-2018 18:31:17 UTC] PHP Parse error:  syntax error, unexpected ';' in C:\AppServ\01www\cotisap\storage\framework\views\942cbe86d1eca482ee4be27081e4f6665e9e65bd.php on line 2
+[23-Sep-2018 23:03:29 UTC] PHP Fatal error:  Cannot access empty property in C:\AppServ\01www\cotisap\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[23-Sep-2018 23:05:23 UTC] PHP Fatal error:  Cannot access empty property in C:\AppServ\01www\cotisap\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[23-Sep-2018 23:06:22 UTC] PHP Fatal error:  Cannot access empty property in C:\AppServ\01www\cotisap\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[23-Sep-2018 23:08:10 UTC] PHP Fatal error:  Cannot access empty property in C:\AppServ\01www\cotisap\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[23-Sep-2018 23:10:29 UTC] PHP Fatal error:  Cannot access empty property in C:\AppServ\01www\cotisap\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[24-Sep-2018 01:53:29 UTC] PHP Fatal error:  Cannot access empty property in C:\AppServ\01www\cotisap\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[24-Sep-2018 01:56:18 UTC] PHP Fatal error:  Cannot access empty property in C:\AppServ\01www\cotisap\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOStatement.php on line 142
+[24-Sep-2018 02:06:07 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ']' in C:\AppServ\01www\cotisap\app\Http\Controllers\CotizacionSAPController.php on line 46
+[24-Sep-2018 02:08:41 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in C:\AppServ\01www\cotisap\app\Http\Controllers\CotizacionSAPController.php on line 27
+[24-Sep-2018 04:24:59 UTC] PHP Fatal error:  Class 'GuzzleHttp\Client' not found in C:\AppServ\01www\cotisap\routes\web.php on line 30
+[24-Sep-2018 05:05:06 UTC] PHP Parse error:  syntax error, unexpected ',' in C:\AppServ\01www\cotisap\app\Http\Controllers\AuthController.php on line 23
+[24-Sep-2018 05:06:25 UTC] PHP Parse error:  syntax error, unexpected ',' in C:\AppServ\01www\cotisap\app\Http\Controllers\AuthController.php on line 23
+[24-Sep-2018 05:07:56 UTC] PHP Fatal error:  Class 'App\Http\Controllers\GuzzleHttp\Client' not found in C:\AppServ\01www\cotisap\app\Http\Controllers\AuthController.php on line 21
+[28-Oct-2018 21:05:57 UTC] PHP Parse error:  syntax error, unexpected '}' in C:\AppServ\01www\cotisap\routes\web.php on line 149
+[29-Oct-2018 00:51:06 UTC] PHP Fatal error:  Call to undefined function App\Http\Controllers\getSeries() in C:\AppServ\01www\cotisap\app\Http\Controllers\TransferenciaController.php on line 12
+[29-Oct-2018 01:14:50 UTC] PHP Fatal error:  Cannot use [] for reading in C:\AppServ\01www\cotisap\app\Http\Controllers\TransferenciaController.php on line 55
+[31-Oct-2018 13:13:49 UTC] PHP Fatal error:  Call to undefined function now() in C:\AppServ\01www\cotisap\storage\framework\views\21154d9032bcd7f2197eaebe360087e670970cd8.php on line 20
+[31-Oct-2018 18:58:20 UTC] PHP Fatal error:  Call to undefined function assets() in C:\AppServ\01www\cotisap\storage\framework\views\21154d9032bcd7f2197eaebe360087e670970cd8.php on line 249
+[31-Oct-2018 18:58:32 UTC] PHP Fatal error:  Call to undefined function assets() in C:\AppServ\01www\cotisap\storage\framework\views\21154d9032bcd7f2197eaebe360087e670970cd8.php on line 249
+[03-Nov-2018 01:58:19 UTC] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in C:\AppServ\01www\cotisap\vendor\doctrine\dbal\lib\Doctrine\DBAL\Driver\PDOConnection.php on line 57

@@ -1,0 +1,60 @@
+DROP PROCEDURE IF EXISTS createCompany;
+DELIMITER $$
+CREATE PROCEDURE createCompany(IN prefix varchar(30))
+BEGIN
+  SET @create_articulos = CONCAT('CREATE TABLE IF NOT EXISTS ', prefix, '_articulos (');
+  SET @create_articulos = CONCAT(@create_articulos, 'id int(10) unsigned NOT NULL AUTO_INCREMENT,');
+  SET @create_articulos = CONCAT(@create_articulos, 'codigo varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_articulos = CONCAT(@create_articulos, 'descripcion varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_articulos = CONCAT(@create_articulos, 'clase varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_articulos = CONCAT(@create_articulos, 'grupo int(11) NOT NULL,');
+  SET @create_articulos = CONCAT(@create_articulos, 'precio decimal(8,2) NOT NULL,');
+  SET @create_articulos = CONCAT(@create_articulos, 'UMV varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_articulos = CONCAT(@create_articulos, 'moneda varchar(5) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_articulos = CONCAT(@create_articulos, 'comentarios varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_articulos = CONCAT(@create_articulos, 'user_id int(11) NOT NULL,');
+  SET @create_articulos = CONCAT(@create_articulos, 'status tinyint(1) NOT NULL DEFAULT 1,');
+  SET @create_articulos = CONCAT(@create_articulos, 'created_at timestamp NULL DEFAULT NULL,');
+  SET @create_articulos = CONCAT(@create_articulos, 'updated_at timestamp NULL DEFAULT NULL,');
+  SET @create_articulos = CONCAT(@create_articulos, 'lista int(11) NOT NULL,');
+  SET @create_articulos = CONCAT(@create_articulos, 'PRIMARY KEY (id),');
+  SET @create_articulos = CONCAT(@create_articulos, 'KEY key_2 (codigo)');
+  SET @create_articulos = CONCAT(@create_articulos, ') ENGINE=MyISAM AUTO_INCREMENT=472 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;');
+  
+  SET @create_art_quotations = CONCAT('CREATE TABLE IF NOT EXISTS ', prefix, '_art_quotations (');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'id int(10) unsigned NOT NULL AUTO_INCREMENT,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'numCotizacion varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'numLine varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'codigoArt varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'nombreArt varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'cantidad int(11) NOT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'moneda varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'precioLista varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'UMV varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'precioUnidad varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'PrecioVenta varchar(255) COLLATE utf8mb4_unicode_ci,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'importe varchar(255) COLLATE utf8mb4_unicode_ci,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'marca varchar(255) COLLATE utf8mb4_unicode_ci,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'costo varchar(255) COLLATE utf8mb4_unicode_ci,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'desc varchar(255) COLLATE utf8mb4_unicode_ci,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'utilidad varchar(255) COLLATE utf8mb4_unicode_ci,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'factor varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'subTotalLinea varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'almacen varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'tiempoEntrega varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'observaciones varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'created_at timestamp NULL DEFAULT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'updated_at timestamp NULL DEFAULT NULL,');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, 'PRIMARY KEY (id)');
+  SET @create_art_quotations = CONCAT(@create_art_quotations, ') ENGINE=MyISAM AUTO_INCREMENT=29997 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;');
+
+  PREPARE articulos FROM @create_articulos;
+  PREPARE art_quotations FROM @create_art_quotations;
+
+  EXECUTE articulos;
+  EXECUTE art_quotations;
+
+  DEALLOCATE PREPARE articulos;
+  DEALLOCATE PREPARE art_quotations;
+END
+$$

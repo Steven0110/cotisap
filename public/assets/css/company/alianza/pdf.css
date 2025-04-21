@@ -1,0 +1,56 @@
+/*
+ *	Mini framework CSS
+ */
+html, body{margin:0;}
+@page {margin: 0px;}
+body{background: white;}
+.row{width:100%;position: relative;}
+[class*='s-']{display:inline-block;}
+.s-12{width:96%;}
+.s-11{width:87.666666%;}
+.s-10{width:79.333333%;}
+.s-9{width:71%;}
+.s-8{width:62.666667%;}
+.s-7{width:54.233333%;}
+.s-6{width:46%;}
+.s-5{width:37.666667%;}
+.s-4{width:29.333333%;}
+.s-3{width:21%;}
+.s-2{width:12.666667%;}
+.s-1{width:4.333333%;}
+.text-right{text-align:right;}
+.text.center{text-align: center;}
+.bordered{border: 1px solid black;}
+
+/*
+ *	Estilos propios del PDF
+ *
+ */
+
+body{
+	font-family: Helvetica, Arial, Sans-Serif;
+	padding: 30px;
+	padding-top: 70px;
+}
+.img-container{
+	margin-bottom:20px;
+}
+img.logo{
+	width: 60%;
+}
+#client-info{
+	font-size: 10px;
+}
+.uppercase{
+	text-transform: uppercase;
+}
+#quotation-info{
+	font-size: 10px;
+}
+.big-title{
+	font-size: 18px;
+	font-weight: bold;
+}
+.title{
+	padding-bottom: 15px;
+}

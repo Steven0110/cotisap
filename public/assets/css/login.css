@@ -1,0 +1,299 @@
+#logoLogin{
+	background-size: 164px;
+	background-image: url('../img/cotisap/logosap.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	height: 200px;
+	margin: 0 auto;
+	width: 280px;
+	min-width: 280px;
+	max-width: 330px;
+}
+
+#cont{width: 100%;}
+
+.viewItem{cursor: pointer;}
+
+.dataCompany td{padding: .2rem;}
+
+.dataCompany td p{margin: 0px}
+
+#cont div.abcRioButton {width: 100% !important;}
+
+.progress-hover:hover{
+	background: #ededed;
+	cursor: pointer;
+}
+
+.loginSlideShow,
+.loginSlideShow:after{
+	position: fixed;
+	list-style: none;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	z-index: 0;
+}
+
+.loginSlideShow:after{content: '';}
+
+.loginSlideShow li span{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	color: transparent;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: none;
+	opacity: 0;
+	z-index: 0;
+	animation: imageAnimation 36s linear infinite 0s;
+}
+
+
+
+.loginSlideShow li div{
+	z-index: 1000;
+	position: absolute;
+	bottom: 30px;
+	left: 0px;
+	width: 100%;
+	text-align: center;
+	opacity: 0;
+	color: #fff;
+}
+
+.loginSlideShow li:nth-child(1) span { 
+    background-image: url(../img/login/slideOne.jpg);
+}
+
+.loginSlideShow li:nth-child(2) span { 
+    background-image: url(../img/login/slideTwo.jpg);
+    animation-delay: 6s; 
+}
+
+.loginSlideShow li:nth-child(3) span { 
+    background-image: url(../img/login/slideThree.jpg);
+    animation-delay: 12s;
+}
+
+.loginSlideShow li:nth-child(4) span { 
+    background-image: url(../img/login/slideOne.jpg);
+    animation-delay: 18s; 
+}
+
+.loginSlideShow li:nth-child(5) span { 
+    background-image: url(../img/login/slideTwo.jpg);
+    animation-delay: 24s; 
+}
+
+.loginSlideShow li:nth-child(6) span { 
+    background-image: url(../img/login/slideThree.jpg);
+    animation-delay: 30s; 
+}
+
+.loginSlideShow li:nth-child(2) div {animation-delay: 6s;}
+
+.loginSlideShow li:nth-child(3) div {animation-delay: 12s;}
+
+.loginSlideShow li:nth-child(4) div {animation-delay: 18s;}
+
+.loginSlideShow li:nth-child(5) div {animation-delay: 24s;}
+
+.loginSlideShow li:nth-child(6) div {animation-delay: 30s;}
+
+@keyframes imageAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    8% { opacity: 1; animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+.text-center{text-align: center;}
+
+#loginContainer{
+	height: 100%;
+	background-color: rgb(255,255,255);
+	position: fixed;
+	right: 0;
+	overflow: auto;
+}
+
+.custom-file-input-dm::-webkit-file-upload-button {visibility: hidden;}
+
+.custom-file-input-dm::before {
+	content: '\f0ee';
+	font-family: FontAwesome;
+	color: white;
+	background:#0275d8;
+	border: 1px solid #0275d8;
+	border-radius: 3px;
+	white-space: nowrap;
+	cursor: pointer;
+	font-size: 10pt;
+	padding: 10px 65px;
+}
+
+.container-forms{
+	margin: 10px auto;
+	padding: 10px;
+	width: 100%;
+	min-width: 280px;
+	max-width: 400px;
+}
+
+#formLogin  input[type="text"],
+#formLogin  input[type="password"]{
+	margin-bottom: 15px;
+}
+
+.divider-login{
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+}
+
+/**
+* [USER NAME CONTAINER]
+**/
+#filesInfo .additional-text{
+	text-align: center;
+}
+
+.additional-text{
+	font-style: italic;
+	font-size: 13px;
+}
+
+#usernameContainer hr,
+#passwordContainer hr {
+	margin: 25px 0px !important;
+}
+
+#filesInfo button#addFiles{
+	float: right;
+}
+
+#findByRFC button,
+#filesInfo button#bckLogInThree,
+#filesInfo button#createAccount,
+#companyInfo button,
+#userInfoShort button,
+#userInfo button,
+#usernameContainer button,
+#passwordContainer button{
+
+	width: 100%;
+
+	margin: 0 auto;
+
+}
+button#newRegister,
+button#registerUserShort,
+button#registerUser,
+button#registerCompany,
+#filesInfo button#createAccount{margin: 15px auto;}
+#passwordContainer{display: none;}
+
+/**
+* [PASSWORD	 CONTAINER]
+**/
+.no-padding{
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.no-padding-table tr td p{
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.copy{
+	bottom: 0;
+	text-align: center;
+	font-size: 10px;
+	margin: 15px 0;
+}
+
+.inner-addon {position: relative;}
+
+.inner-addon .fa{
+	position: absolute;
+	padding: 10px;
+	pointer-events: none;
+}
+
+.btn-head{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.left-addon .fa { left:  0px;}
+.right-addon .fa { right: 0px;}
+
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+.notifications-holder{padding: 17px 0;}
+
+.notifications-holder{
+	left: inherit;
+	right: 0 !important;
+}
+
+.notifications-wrap{padding: 25px 0;}
+.shopping-cart{padding: 17px 0;}
+
+.shopping-cart-wraper{
+	left: inherit;
+	right: 0 !important;
+}
+
+#checkOutBtn{
+	margin: 10px;
+	float: right;
+}
+.categoryList{
+	list-style: none;
+	padding: 5px 0 0 12px;
+}
+
+.active-selection a{
+	color: white !important;
+}	
+.active-selection{
+	color: white !important;
+	background: rgb(5,84,147) !important;
+}
+
+.categoryList li{
+	cursor: pointer;
+	padding: 5px;
+	transition: all .2s ease-in-out;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+}    
+
+.categoryList li i{
+	margin-right: 5px;
+}
+
+.btn{
+	cursor: pointer;
+}
+
+#request-warp{
+	padding: 30px 0px;
+	overflow: overlay;
+}
+
+.title-holder{
+	color: #999;
+	margin: 20px 0px;
+}

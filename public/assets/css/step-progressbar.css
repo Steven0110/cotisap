@@ -1,0 +1,85 @@
+/*progressbar*/
+#progressbar {
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+	padding-left: 0;
+	top: 10px;
+}
+#progressbar ul{
+}
+#progressbar li {
+	list-style-type: none;
+	color: white;
+  	text-align:center;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 14.28%;
+	float: left;
+	position: relative;
+}
+
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: white;
+	z-index : 99;
+	background: gray;
+	border-radius: 10px;
+	margin: 0 auto 0 auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 80%;
+	height: 5px;
+	background: gray;
+	position: absolute;
+	left: -38%;
+	top: 8px;
+	z-index: 0; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #27AE60;
+	color: white;
+	z-index: 999;
+}
+/*TABLE*/
+#progress-table{
+	table-layout: fixed;
+	display: table;
+	width: 100%;
+
+}
+#progress-table th{
+	font-size: 12px;
+	border-right: 1px solid black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#progress-table thead tr{
+	background: rgba(100,100,100, 0.3);
+}
+#progress-table tr:nth-child(even){
+	background: rgba(100,100,100, 0.1);
+}
+#progress-table tr:hover{
+	background: rgba(100,100,100, 0.3);
+}
+#progress-table td{
+	padding-top: 10px;
+}
+
+
+
+
